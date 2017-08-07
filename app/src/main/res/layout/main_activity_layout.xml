@@ -16,6 +16,15 @@
     android:textSize:指定文字大小,单位为sp
     android:textColor:指定文字颜色
     -->
-
-
+<Button
+    android:id="@+id/button_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="button"
+    android:textAllCaps="false"
+    />
+<!--
+android:textAllCaps:
+Android会对Button中所有的字母进行大写，用这个选项禁止这个功能
+-->
     </LinearLayout>
