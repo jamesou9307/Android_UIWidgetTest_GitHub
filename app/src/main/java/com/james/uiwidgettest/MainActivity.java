@@ -1,5 +1,7 @@
 package com.james.uiwidgettest;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,8 +48,30 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     progressBar.setVisibility(View.GONE);
                 }*/
+                /*
+                //更改progressbar的长度
                 int progress=progressBar.getProgress();
-                progressBar.setProgress(progress+10);
+                progressBar.setProgress(progress+10);*/
+
+                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("This is a dialog");//为dialog设定标题
+                dialog.setMessage("Somthing important");//设置信息
+                dialog.setCancelable(false);
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {//创建“确定按钮”
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {//创建"取消按钮"
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                dialog.show();
+
+
             }
         });
     }
