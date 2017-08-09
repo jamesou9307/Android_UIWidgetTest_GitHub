@@ -1,5 +1,6 @@
 package com.james.uiwidgettest;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.ForkJoinPool;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 int progress=progressBar.getProgress();
                 progressBar.setProgress(progress+10);*/
 
-                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
+          /*
+          //创建一个Alertdialog
+          AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
                 dialog.setTitle("This is a dialog");//为dialog设定标题
                 dialog.setMessage("Somthing important");//设置信息
                 dialog.setCancelable(false);
@@ -69,9 +74,15 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-                dialog.show();
+                dialog.show();*/
 
+                ProgressDialog progressDialog=new ProgressDialog(MainActivity.this);
+                progressDialog.setTitle("This is a ProgressDialog");
+                progressDialog.setMessage("Wait.....");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
 
+                //如果progressdialog的cancelable为false,则不能通过back按键退出，必须在程序中控制
             }
         });
     }
